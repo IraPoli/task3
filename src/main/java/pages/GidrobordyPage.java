@@ -1,15 +1,13 @@
 package pages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GidrobordyPage extends BasePage{
-    //div[contains(@class,'item')]//i[contains(@class,' js-btn-close')]
-    //div[@class='btns-cart-holder']//a[contains(@class,'btn--orange')]
+
+public class GidrobordyPage extends BasePage {
+
     @FindBy(xpath = "//a[contains(@data-ecomm-cart,'243123')]")
     private WebElement buyButton;
 
@@ -28,20 +26,19 @@ public class GidrobordyPage extends BasePage{
     @FindBy(id = "js_cart")
     private WebElement addToCartPopup;
 
-    @FindBy(xpath =  "//span[contains(@class,'name')]")
+    @FindBy(xpath = "//span[contains(@class,'name')]")
     private WebElement orderedProduct;
 
-    @FindBy(xpath =  "//div[contains(@class,'item')]//i[contains(@class,' js-btn-close')]")
+    @FindBy(xpath = "//div[contains(@class,'item')]//i[contains(@class,' js-btn-close')]")
     private WebElement deleteFromBasketButton;
-
 
 
     public GidrobordyPage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickBuyButton(){
-     //   driver.findElement(By.xpath(BUY_BUTTON)).click();
+    public void clickBuyButton() {
+        //   driver.findElement(By.xpath(BUY_BUTTON)).click();
         buyButton.click();
     }
 
@@ -49,17 +46,15 @@ public class GidrobordyPage extends BasePage{
         continueShoppingButton.click();
     }
 
-    public void inputLowRange(String lowRange){
+    public void inputLowRange(String lowRange) {
         lowRangeInput.sendKeys(lowRange);
     }
 
-    public void clickShowFilterButton(){
+    public void clickShowFilterButton() {
         showFilterButton.click();
     }
 
-    public void clickSetLowRange(){
-      //  inputLowRange(lowRange);
-      //  getHomePage().implicitWait(30);
+    public void clickSetLowRange() {
         clickShowFilterButton();
 
     }
@@ -68,21 +63,17 @@ public class GidrobordyPage extends BasePage{
         return addToCartPopup;
     }
 
-    public String getOrderedProductName(){
+    public String getOrderedProductName() {
         return orderedProduct.getText();
     }
 
-    public void clickDeleteFromBasketButton(){
+    public void clickDeleteFromBasketButton() {
         deleteFromBasketButton.click();
     }
 
 
-    public void waitVisibilityOfElement(long timeToWait){
-     this.waitVisibilityOfElement(timeToWait,addToCartPopup);
+    public void waitVisibilityOfElement(long timeToWait) {
+        this.waitVisibilityOfElement(timeToWait, addToCartPopup);
     }
-    //public void wait()
-
-
-
 
 }

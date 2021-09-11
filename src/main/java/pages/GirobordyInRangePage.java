@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class GirobordyInRangePage extends BasePage{
+public class GirobordyInRangePage extends BasePage {
 
     @FindBy(xpath = "//div[@class='prod-cart__descr']")
     private List<WebElement> rangeResultsProductsList;

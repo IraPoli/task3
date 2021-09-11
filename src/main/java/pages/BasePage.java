@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BasePage {
     WebDriver driver;
 
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -31,11 +31,11 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public String getPageUrl(){
+    public String getPageUrl() {
         return driver.getCurrentUrl();
     }
 
-    public String getPageTitle(){
+    public String getPageTitle() {
         return driver.getTitle();
     }
 }

@@ -1,19 +1,18 @@
 package Task3tests;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.Test;
 
 
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class NavigateTest  extends BaseTest{
+public class NavigateTest extends BaseTest {
     private final String GIROBORD_TAB = "girobordyi-i-giroskuteryi";
     private final String TITEL_WORD = "Купить гироборд, моноколесо в Киеве и Харькове";
     private final String LOW_RANGE_VALUE = "20000";
 
     @Test(priority = 1)
-    public void checkThatPageNavigateToGirobordyTab(){
+    public void checkThatPageNavigateToGirobordyTab() {
         getHomePage().clickGirobordyButton();
         assertEquals(getDriver().getTitle(), TITEL_WORD);
         assertTrue(getDriver().getCurrentUrl().contains(GIROBORD_TAB));
@@ -27,6 +26,4 @@ public class NavigateTest  extends BaseTest{
         getGidrobordyPage().clickSetLowRange();
         assertEquals(getGidrobordyRangePage().getRangeResultsCount(), 4);
     }
-
-
 }
